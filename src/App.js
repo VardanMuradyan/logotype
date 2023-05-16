@@ -23,6 +23,9 @@ function App() {
             <Navigation/>
             <div className="container">
                 <div className="product">
+                    {
+                        productlist.map(item)
+                    }
                     <ProductItem image={post1} title="Lifestyle" name="Eat Right For Your Exercise Regime" year="" text="Structured gripped tape invisible moulded cups for sauppor firm hold strong power mesh front liner sport detail. Warmth comfort hangs loosely from the body large pocket at the front full button…"/>
                     <ProductItem image={post2} title="Lifestyle" name="The Look: Perfect Balance" year="" text="Structured gripped tape invisible moulded cups for sauppor firm hold strong power mesh front liner sport detail. Warmth comfort hangs loosely from the body large pocket at the front full button…"/>
                     <ProductItem image={post3} title="Style" name="Fun Things to Do in Rome" year="" text="Structured gripped tape invisible moulded cups for sauppor firm hold strong power mesh front liner sport detail. Warmth comfort hangs loosely from the body large pocket at the front full button…"/>
