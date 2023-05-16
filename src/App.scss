@@ -1,0 +1,20 @@
+@import "assets/styles/reset";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+@import "assets/scss/header";
+@import "assets/scss/navigation";
+@import "assets/scss/productitem";
+@import "assets/scss/menu";
+@import "assets/scss/media";
+
+
+
+body {
+  background-color: #F2F2F2;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}

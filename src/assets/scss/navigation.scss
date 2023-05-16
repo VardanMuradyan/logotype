@@ -1,0 +1,28 @@
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #E9E9E9;
+  border-bottom: 1px solid #E9E9E9;
+  padding: 20px 0;
+  gap: 32px;
+  margin-bottom: 48px;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    text-transform: capitalize;
+    color: #000000;
+  }
+
+  li:last-child img {
+    display: none;
+    color: red;
+  }
+}
+
