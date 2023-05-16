@@ -3,6 +3,7 @@ import './App.scss';
 import Header from "./components/Header";
 import ProductItem from "./components/ProductItem";
 import Navigation from "./components/Navigation";
+import {productlist} from "./helpers/constant";
 
 import post1 from './assets/images/post/1.png'
 import post2 from './assets/images/post/2.png'
