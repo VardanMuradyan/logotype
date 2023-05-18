@@ -4,14 +4,13 @@ import Close from "../assets/icons/Close/x.svg";
 import Navigation from "./Navigation";
 
 const Menu = ({Active, setActive}) => {
-
     const CloseBtn = () => {
         setActive(false)
     }
 
     return (
         <>
-            <div className={Active ? "menu active" : "menu"} onClick={() => setActive(false)}>
+            <div className={`${Active ? "menu active" : "menu"}`} onClick={() => setActive(false)}>
                <div onClick={event => event.stopPropagation()}>
                    <div className="header menu_header">
                        <img src={Logo} alt="Logo"/>

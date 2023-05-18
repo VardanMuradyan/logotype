@@ -6,7 +6,6 @@ import {useState} from "react";
 
 function Header() {
     const [MenuActive, setMenuActive] = useState(false);
-
     const ButtonOpen = () => {
         setMenuActive(!MenuActive)
     }

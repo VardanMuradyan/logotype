@@ -49,6 +49,27 @@
       line-height: 20px;
       color: #929292;
     }
+    .content__texts{
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      margin-bottom: 16px;
+
+      p:first-child{
+        color: #000000;
+      }
+      p{
+        color: #9B9B9B;
+      }
+
+      span{
+        width: 4px;
+        height: 4px;
+        background-color: #D7D7D7;
+        border-radius: 50%;
+      }
+
+    }
 
   }
 
