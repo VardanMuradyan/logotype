@@ -3,8 +3,14 @@ import './App.scss';
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
 import {listYear, productlist} from "./helpers/constant";
+import {useEffect} from "react";
 
 function App() {
+    useEffect(()=>{
+        fetch('https://raw.githubusercontent.com/Karen919/new/main/data.json')
+            .then(data=>data.json())
+            .then(data1=>console.log(data1))
+    },[])
     return (
         <>
             <Header/>
