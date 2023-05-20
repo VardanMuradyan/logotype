@@ -4,7 +4,7 @@ import SubMenu from '../assets/icons/Mobile-menu/Combined Shape.svg'
 import Menu from "./Menu";
 import {useState} from "react";
 
-function Header() {
+function Header({filteredItem, setFilteredItem}) {
     const [MenuActive, setMenuActive] = useState(false);
     const ButtonOpen = () => {
         setMenuActive(!MenuActive)
@@ -14,15 +14,18 @@ function Header() {
         <>
             <div className="container">
                 <header className="header">
-                    <div  className="header__menu">
+                    <div className="header__menu">
                         <img onClick={ButtonOpen} src={SubMenu} alt=""/>
                         <Menu Active={MenuActive} setActive={setMenuActive}/>
                     </div>
                     <div className="header__logo">
                         <a href="#"><img className="" src={Logo} alt="Logo"/></a>
                     </div>
-                    <div>
+                    <div className="header-search-to-input">
                         <img className="header__search" src={Search} alt="Logo"/>
+                        <input type="text" value={filteredItem} onChange={(event) => {
+                            setFilteredItem(event.target.value)
+                        }}/>
                     </div>
                 </header>
             </div>

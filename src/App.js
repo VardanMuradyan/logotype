@@ -6,22 +6,34 @@ import {useEffect, useState} from "react";
 
 function App() {
     const [dataList, setDataList] = useState([])
+    const [filteredItem, setFilteredItem] = useState("")
+
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/Karen919/new/main/data.json')
             .then(data => data.json())
             .then(data1 => setDataList(data1))
     }, [])
 
+    useEffect(() => {
+        // const x = filteredItem.toLowerCase();
+        const dataListText = dataList.filter((value) => {
+            return filteredItem.toLowerCase() === value.title.toLowerCase()
+        /*????????????  dzelll*/
+        })
+        setDataList(dataListText)
 
+    }, [filteredItem])
+
+    console.log(filteredItem)
     return (
         <>
-            <Header/>
+            <Header filteredItem={filteredItem} setFilteredItem={setFilteredItem}/>
             {/*{!isMobile && <Navigation />}*/}
             <Navigation/>
             <div className="container">
                 <div className="product">
                     {
-                      dataList?.length>0 ?  dataList.map((item, index) => {
+                        dataList?.length > 0 ? dataList.map((item, index) => {
                             return (
                                 <div key={index} className="product_item">
                                     <div className="__item-img">
@@ -41,9 +53,9 @@ function App() {
                                     </div>
                                 </div>
                             )
-                        }):<div>
-                          Loading....
-                      </div>
+                        }) : <div>
+                            Loading....
+                        </div>
                     }
 
                 </div>

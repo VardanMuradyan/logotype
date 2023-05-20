@@ -15,12 +15,12 @@ function Navigation() {
                 <ul className="nav-item nav_menu">
                     {nav.map(item => <li onClick={onMenu} key={item} className="nav__list">
                         <a className="-item-link" href="#">{item}<img src={Chevron} alt="Chevron"/></a>
-                        <ul onmenu={onmenu} setonMenu={setonmenu}
-                            className={`${onmenu ? "nav__subnav onmenu" : "nav__subnav"}`}
-                            onClick={() => setonmenu(false)}>
-                            {navMenu.map((item) => <li key={item} className="_subnav-li">
-                                <a href="#">{item}<img src={Chevron} alt="Chevron"/></a>
-                            </li>)}</ul>
+                        {/*<ul onmenu={onmenu} setonMenu={setonmenu}*/}
+                        {/*    className={`${onmenu ? "nav__subnav onmenu" : "nav__subnav"}`}*/}
+                        {/*    onClick={() => setonmenu(false)}>*/}
+                        {/*    {navMenu.map((item) => <li key={item} className="_subnav-li">*/}
+                        {/*        <a href="#">{item}<img src={Chevron} alt="Chevron"/></a>*/}
+                        {/*    </li>)}</ul>*/}
                     </li>)}
                 </ul>
             </nav>
