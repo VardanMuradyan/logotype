@@ -17,14 +17,14 @@ function App() {
     useEffect(() => {
         // const x = filteredItem.toLowerCase();
         const dataListText = dataList.filter((value) => {
-            return filteredItem.toLowerCase() === value.title.toLowerCase()
-        /*????????????  dzelll*/
+            return filteredItem.toLowerCase().includes(filteredItem) === value.title.toLowerCase().includes(filteredItem)
+            /*????????????  dzelll*/
         })
         setDataList(dataListText)
 
     }, [filteredItem])
 
-    console.log(filteredItem)
+    // console.log(filteredItem)
     return (
         <>
             <Header filteredItem={filteredItem} setFilteredItem={setFilteredItem}/>

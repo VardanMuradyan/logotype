@@ -1,5 +1,6 @@
 @media screen and (max-width: 500px){
     .header{
+      padding: 30px 0 0;
       .header__menu{
         display: block;
       }
@@ -11,8 +12,12 @@
   .product_item{
     width: 336px;
   }
-  .menu{
-
+  .header-search-to-input{
+    input{
+      width: 150px;
+      top: 140%;
+      right: 0;
+      transform: translateY(0);
+    }
   }
-
 }

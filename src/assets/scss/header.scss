@@ -5,7 +5,7 @@
   align-items: center;
   padding: 30px 0 26px;
 
-  .header__menu{
+  .header__menu {
     display: none;
     cursor: pointer;
   }
@@ -27,5 +27,39 @@
     cursor: pointer;
   }
 }
+
+.header-search-to-input {
+  position: relative;
+  top: 0;
+  z-index: 1;
+  display: block;
+
+  img {
+    margin-left: 4px;
+  }
+
+  input {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    z-index: -1;
+    transform: translateY(-50%);
+    outline: none;
+    line-height: 2;
+    padding: 0 10px;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid #9B9B9B;
+    border-radius: 8px;
+    cursor: help;
+
+    display: none;
+  }
+
+  &:hover input {
+    display: block;
+  }
+}
+
+
 
 
