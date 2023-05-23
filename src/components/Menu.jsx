@@ -17,7 +17,7 @@ const Menu = ({Active, setActive}) => {
                        <img className="menu-closed" onClick={CloseBtn} src={Close} alt="Close"/>
                    </div>
                    <div>
-                       {/*<Navigation/>*/}
+                       <Navigation/>
                    </div>
                </div>
             </div>
