@@ -1,8 +1,8 @@
 import Logo from '../assets/images/logo/Logo.svg'
 import Search from '../assets/icons/Search/B.svg'
 import SubMenu from '../assets/icons/Mobile-menu/Combined Shape.svg'
-import Menu from "./Menu";
 import {useState} from "react";
+import Navigation from "./Navigation";
 
 function Header({filteredItem, setFilteredItem}) {
     const [MenuActive, setMenuActive] = useState(false);
@@ -16,7 +16,7 @@ function Header({filteredItem, setFilteredItem}) {
                 <header className="header">
                     <div className="header__menu">
                         <img onClick={ButtonOpen} src={SubMenu} alt=""/>
-                        <Menu Active={MenuActive} setActive={setMenuActive}/>
+                        <Navigation Active={MenuActive} setActive={setMenuActive}/>
                     </div>
                     <div className="header__logo">
                         <a href="#"><img className="" src={Logo} alt="Logo"/></a>
