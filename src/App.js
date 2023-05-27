@@ -1,8 +1,7 @@
 import './App.scss';
-
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 
 function App() {
     const [dataList, setDataList] = useState([])
@@ -18,7 +17,7 @@ function App() {
             })
     }, [])
 
-    console.log(dataList)
+    // console.log(dataList)
     useEffect(() => {
         // const x = filteredItem.toLowerCase();
         const dataListText = dataList.filter((value) => {
@@ -31,7 +30,6 @@ function App() {
     return (
         <>
             <Header filteredItem={filteredItem} setFilteredItem={setFilteredItem}/>
-            {/*{!isMobile && <Navigation />}*/}
             <Navigation/>
             <div className="container">
                 <div className="product">

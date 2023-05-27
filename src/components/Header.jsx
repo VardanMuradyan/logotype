@@ -3,6 +3,7 @@ import Search from '../assets/icons/Search/B.svg'
 import SubMenu from '../assets/icons/Mobile-menu/Combined Shape.svg'
 import {useState} from "react";
 import Navigation from "./Navigation";
+import {Link} from "react-router-dom";
 
 function Header({filteredItem, setFilteredItem}) {
     const [MenuActive, setMenuActive] = useState(false);
@@ -19,7 +20,7 @@ function Header({filteredItem, setFilteredItem}) {
                         <Navigation Active={MenuActive} setActive={setMenuActive}/>
                     </div>
                     <div className="header__logo">
-                        <a href="#"><img className="" src={Logo} alt="Logo"/></a>
+                        <Link to="/"><img className="" src={Logo} alt="Logo"/></Link>
                     </div>
                     <div className="header-search-to-input">
                         <img className="header__search" src={Search} alt="Logo"/>

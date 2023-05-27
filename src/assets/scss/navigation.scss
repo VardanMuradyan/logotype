@@ -21,11 +21,12 @@
     color: #000000;
     transition: color 200ms ease-out;
 
-    &:hover  img {
+    &:hover {
       color: #969696;
     }
-    img{
-      transform: rotate(-90deg);
+
+    img {
+      transform: rotate(0deg);
     }
 
   }
@@ -40,7 +41,7 @@
   display: none;
 }
 
-.nav__list:not(:last-child):hover .nav__subnav{
+.nav__list:not(:last-child):hover .nav__subnav {
   display: block;
 }
 
@@ -91,14 +92,13 @@
 }
 
 
-
 .menu_header {
   display: none;
   padding: 20px;
   justify-content: space-between;
   border-bottom: 1px solid #E9E9E9;
 
-  .menu-closed{
+  .menu-closed {
     cursor: pointer;
   }
 

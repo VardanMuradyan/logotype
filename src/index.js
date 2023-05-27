@@ -3,20 +3,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import ProductItem from "./components/ProductItem"
 import BuyNow from "./pages/BuyNow";
-
+import Demos from "./pages/Demos";
+import Post from "./pages/post";
+import Categories from "./pages/categories";
+import Shop from "./pages/shop";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-      <BrowserRouter>
-          <Routes>
-              <Route path="/" element={<App/>}/>
-              <Route path="/Buy Now" element={<BuyNow/>}/>
-          </Routes>
-      </BrowserRouter>
+    <React.StrictMode>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<App/>}/>
+                <Route path="/demos" element={<Demos/>}/>
+                <Route path="/post" element={<Post/>}/>
+                <Route path="/categories" element={<Categories/>}/>
+                <Route path="/shop" element={<Shop/>}/>
+                <Route path="/buy Now" element={<BuyNow/>}/>
+            </Routes>
+        </BrowserRouter>
 
-  </React.StrictMode>
+    </React.StrictMode>
 );
