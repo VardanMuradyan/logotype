@@ -2,11 +2,14 @@ import './App.scss';
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
 import React, {useEffect, useState} from "react";
+import {useNavigate} from "react-router";
 
 function App() {
     const [dataList, setDataList] = useState([])
     const [filteredDatalist, setFilteredDatalist] = useState([])
     const [filteredItem, setFilteredItem] = useState("")
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/Karen919/new/main/data.json')
@@ -27,6 +30,11 @@ function App() {
 
     }, [filteredItem])
 
+    const handleClick = (item) => {
+        //console.log(item)
+        navigate('/eror',{state:item})
+    }
+
     return (
         <>
             <Header filteredItem={filteredItem} setFilteredItem={setFilteredItem}/>
@@ -36,7 +44,9 @@ function App() {
                     {
                         filteredDatalist?.length > 0 ? filteredDatalist.map((item, index) => {
                             return (
-                                <div key={index} className="product_item">
+                                <div key={index} onClick={() => {
+                                    handleClick(item)
+                                }} className="product_item">
                                     <div className="__item-img">
                                         <img key={item} src={item.img} alt="#"/>
                                     </div>
