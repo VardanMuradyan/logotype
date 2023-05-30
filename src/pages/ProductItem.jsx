@@ -3,7 +3,7 @@ import {useLocation} from "react-router";
 import {Link} from "react-router-dom";
 
 
-const Eror = () => {
+const ProductItem = () => {
     const loc = useLocation()
     // console.log(loc)
     return (
@@ -29,4 +29,4 @@ const Eror = () => {
     );
 };
 
-export default Eror;
+export default ProductItem;

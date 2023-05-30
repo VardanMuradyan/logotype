@@ -8,8 +8,9 @@ import Demos from "./pages/Demos";
 import Post from "./pages/post";
 import Categories from "./pages/categories";
 import Shop from "./pages/shop";
-import Eror from "./pages/Eror";
-
+import ProductItem from "./pages/ProductItem";
+import {Provider} from "react-redux";
+import {createStore} from "redux";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -23,7 +24,7 @@ root.render(
                 <Route path="/categories" element={<Categories/>}/>
                 <Route path="/shop" element={<Shop/>}/>
                 <Route path="/buy Now" element={<BuyNow/>}/>
-                <Route path="*" element={<Eror/>}/>
+                <Route path="*" element={<ProductItem/>}/>
             </Routes>
         </BrowserRouter>
 
