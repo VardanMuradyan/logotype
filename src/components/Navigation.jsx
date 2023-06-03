@@ -3,6 +3,8 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Logo from "../assets/images/logo/Logo.svg";
 import Close from "../assets/icons/Close/x.svg";
+import PropTypes from 'prop-types';
+
 
 function Navigation({Active, setActive}) {
     const nav = ["demos", "post", "categories", "shop", "buy now"]
@@ -21,7 +23,7 @@ function Navigation({Active, setActive}) {
                     {nav.map(item => <li key={item} className="nav__list">
                         <Link className="-item-link" to={item}>{item}<img src={Chevron} alt="Chevron"/></Link>
                         <ul className="nav__subnav">
-                            {navMenu.map((item) => <li key={item} className="_subnav-li">
+                            {navMenu?.map((item) => <li key={item} className="_subnav-li">
                                 <a href="#">{item}<img src={Chevron} alt="Chevron"/></a>
                             </li>)}</ul>
                     </li>)}
@@ -29,6 +31,11 @@ function Navigation({Active, setActive}) {
             </nav>
         </>
     );
+}
+
+Navigation.propTypes = {
+    active: PropTypes.bool,
+    setActive: PropTypes.bool
 }
 
 export default Navigation;

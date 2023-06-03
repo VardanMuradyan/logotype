@@ -12,7 +12,7 @@ function App() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch('https://raw.githubusercontent.com/Karen919/new/main/data.json')
+        fetch('https://raw.githubusercontent.com/VardanMuradyan/data/master/data.json')
             .then(data => data.json())
             .then(data1 => {
                 setDataList(data1)
@@ -32,7 +32,7 @@ function App() {
 
     const handleClick = (item) => {
         //console.log(item)
-        navigate('/eror',{state:item})
+        navigate('/productitem',{state:item})
     }
 
     return (
