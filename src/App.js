@@ -4,42 +4,33 @@ import Navigation from "./components/Navigation";
 import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router";
 import {useDispatch, useSelector} from "react-redux";
-import {addProductItem} from "./store/actions";
-import {productListSelector,productFilteredListSelector} from "./store/selector";
+import {addFilteredList, addProductItem} from "./store/actions";
+import {productListSelector, filteredListSelector} from "./store/selector";
 
 function App() {
-    // const [dataList, setDataList] = useState([])
-    const [filteredDatalist, setFilteredDatalist] = useState([])
     const [filteredItem, setFilteredItem] = useState("")
+
     const dispatch = useDispatch()
     const navigate = useNavigate()
-
     const productList = useSelector(productListSelector);
-    const itemFilteredList = useSelector(productFilteredListSelector);
-    console.log(itemFilteredList,"list");
+    const filteredList = useSelector(filteredListSelector);
 
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/VardanMuradyan/data/master/data.json')
             .then(data => data.json())
             .then(data1 => {
-                // setDataList(data1)
-                // setFilteredDatalist(data1)
                 dispatch(addProductItem(data1))
             })
     }, [])
 
     useEffect(() => {
-            setFilteredDatalist(productList)
-        }, [productList]
-    )
+        dispatch(addProductItem(productList))
+    }, [productList])
 
     useEffect(() => {
-        const dataListText = productList?.length && productList.filter((value) => {
-            return filteredItem.toLowerCase().includes(filteredItem) === value.title.toLowerCase().includes(filteredItem)
-        })
-        setFilteredDatalist(dataListText)
-
+        dispatch(addFilteredList(filteredItem))
     }, [filteredItem])
+
 
     const handleClick = (item) => {
         navigate('/productitem', {state: item})
@@ -52,7 +43,7 @@ function App() {
             <div className="container">
                 <div className="product">
                     {
-                        filteredDatalist?.length > 0 ? filteredDatalist.map((item, index) => {
+                        filteredList?.length > 0 ? filteredList.map((item, index) => {
                             return (
                                 <div key={index} onClick={() => {
                                     handleClick(item)

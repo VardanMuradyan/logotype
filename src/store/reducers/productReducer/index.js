@@ -10,12 +10,16 @@ export const productReducer = (state = initialState, action) => {
         case ADD_PRODUCT_ITEM:
             return {
                 ...state,
-                ProductList: action.payload
+                ProductList: action.payload,
+                FilteredList: action.payload
             }
         case ADD_FILTERED_LIST:
+            const dataListText = state.ProductList?.length && state.ProductList.filter((value) => {
+                return action.payload.toLowerCase().includes(action.payload) === value.title.toLowerCase().includes(action.payload)
+            })
             return {
                 ...state,
-                FilteredList: action.payload
+                FilteredList: dataListText
             }
         default:
             return state;
