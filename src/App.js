@@ -3,27 +3,38 @@ import Header from "./components/Header";
 import Navigation from "./components/Navigation";
 import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router";
+import {useDispatch, useSelector} from "react-redux";
+import {addProductItem} from "./store/actions";
+import {productListSelector,productFilteredListSelector} from "./store/selector";
 
 function App() {
-    const [dataList, setDataList] = useState([])
+    // const [dataList, setDataList] = useState([])
     const [filteredDatalist, setFilteredDatalist] = useState([])
     const [filteredItem, setFilteredItem] = useState("")
-
+    const dispatch = useDispatch()
     const navigate = useNavigate()
+
+    const productList = useSelector(productListSelector);
+    const itemFilteredList = useSelector(productFilteredListSelector);
+    console.log(itemFilteredList,"list");
 
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/VardanMuradyan/data/master/data.json')
             .then(data => data.json())
             .then(data1 => {
-                setDataList(data1)
-                setFilteredDatalist(data1)
+                // setDataList(data1)
+                // setFilteredDatalist(data1)
+                dispatch(addProductItem(data1))
             })
     }, [])
 
-    // console.log(dataList)
     useEffect(() => {
-        // const x = filteredItem.toLowerCase();
-        const dataListText = dataList.filter((value) => {
+            setFilteredDatalist(productList)
+        }, [productList]
+    )
+
+    useEffect(() => {
+        const dataListText = productList?.length && productList.filter((value) => {
             return filteredItem.toLowerCase().includes(filteredItem) === value.title.toLowerCase().includes(filteredItem)
         })
         setFilteredDatalist(dataListText)
@@ -31,8 +42,7 @@ function App() {
     }, [filteredItem])
 
     const handleClick = (item) => {
-        //console.log(item)
-        navigate('/productitem',{state:item})
+        navigate('/productitem', {state: item})
     }
 
     return (

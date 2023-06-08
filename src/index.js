@@ -10,24 +10,25 @@ import Categories from "./pages/categories";
 import Shop from "./pages/shop";
 import ProductItem from "./pages/ProductItem";
 import {Provider} from "react-redux";
-import {createStore} from "redux";
-
+import store from "./store";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<App/>}/>
-                <Route path="/demos" element={<Demos/>}/>
-                <Route path="/post" element={<Post/>}/>
-                <Route path="/categories" element={<Categories/>}/>
-                <Route path="/shop" element={<Shop/>}/>
-                <Route path="/buy Now" element={<BuyNow/>}/>
-                <Route path="*" element={<ProductItem/>}/>
-            </Routes>
-        </BrowserRouter>
+        <Provider store={store}>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<App/>}/>
+                    <Route path="/demos" element={<Demos/>}/>
+                    <Route path="/post" element={<Post/>}/>
+                    <Route path="/categories" element={<Categories/>}/>
+                    <Route path="/shop" element={<Shop/>}/>
+                    <Route path="/buy Now" element={<BuyNow/>}/>
+                    <Route path="*" element={<ProductItem/>}/>
+                </Routes>
+            </BrowserRouter>
+        </Provider>
 
     </React.StrictMode>
 );

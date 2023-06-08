@@ -33,9 +33,9 @@ function Navigation({Active, setActive}) {
     );
 }
 
-Navigation.propTypes = {
-    active: PropTypes.bool,
-    setActive: PropTypes.bool
-}
+// Navigation.propTypes = {
+//     active: PropTypes.bool,
+//     setActive: PropTypes.bool
+// }
 
 export default Navigation;
