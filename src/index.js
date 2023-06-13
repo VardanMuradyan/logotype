@@ -11,6 +11,8 @@ import Shop from "./pages/shop";
 import ProductItem from "./pages/ProductItem";
 import {Provider} from "react-redux";
 import store from "./store";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,6 +21,8 @@ root.render(
         <Provider store={store}>
             <BrowserRouter>
                 <Routes>
+                    <Route path="/login" element={<Login/>}/>
+                    <Route path="/register" element={<Register/>}/>
                     <Route path="/" element={<App/>}/>
                     <Route path="/demos" element={<Demos/>}/>
                     <Route path="/post" element={<Post/>}/>
