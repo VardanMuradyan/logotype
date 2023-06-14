@@ -3,12 +3,15 @@ import {Link} from "react-router-dom";
 import "../assets/scss/loginPage.scss"
 
 function Login() {
+
+
+
     return (
         <>
             <div className="page">
-                <div className="log_reg">
+                <form className="log_reg">
                     <h2>Login to your account</h2>
-                    <form name="form">
+                    <div>
                         <div className="form-group">
                             <label htmlFor="username">Email</label>
                             <input placeholder="Enter your email" type="text" className="form-control" name="username"/>
@@ -23,8 +26,8 @@ function Login() {
                             <button className="btn btn_primary">Login</button>
                             <Link to="/register" className="btn btn_link">Register</Link>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </>
     );

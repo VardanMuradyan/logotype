@@ -1,3 +1,5 @@
+import {ADD_USER_LOGIN} from "../../actions/actionTypes/action";
+
 const initialState = {
     email: "",
     password: ""
@@ -5,7 +7,7 @@ const initialState = {
 
 export const loginReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "ADD-USER-LOGIN":
+        case ADD_USER_LOGIN:
             return {
                 ...state,
                 email: action.payload,

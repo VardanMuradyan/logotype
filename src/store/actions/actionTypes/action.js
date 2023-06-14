@@ -1,4 +1,7 @@
+//Item
 export const ADD_PRODUCT_ITEM = 'ADD_PRODUCT_ITEM'
 export const ADD_FILTERED_LIST = 'ADD_FILTERED_LIST'
 
-
+//Login
+export const ADD_USER_LOGIN = 'ADD_USER_LOGIN'
+export const ADD_USER_REGISTER = 'ADD_USER_REGISTER'

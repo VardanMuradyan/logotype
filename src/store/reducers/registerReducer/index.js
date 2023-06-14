@@ -1,20 +1,14 @@
+import {ADD_USER_REGISTER} from "../../actions/actionTypes/action";
+
 const initialState = {
-    name: "",
-    lastName: "",
-    date: "",
-    email: "",
-    password: ""
+    form: null
 }
-export const RegisterReducer = (state = initialState, action) => {
+export const registerReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "ADD-USER-REGISTER":
+        case ADD_USER_REGISTER:
             return {
                 ...state,
-                name: action.payload,
-                lastName: action.payload,
-                date: action.payload,
-                email: action.payload,
-                password: action.payload
+                form: action.payload
             }
         default:
             return state;

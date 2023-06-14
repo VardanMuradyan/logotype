@@ -75,7 +75,7 @@
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
-.has-error .form-control {
+.form-control .has-error{
   border-color: #a94442;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
 }
@@ -84,6 +84,7 @@
   display: none;
   margin-top: 5px;
   margin-bottom: 10px;
+  color: #a94442;
 }
 
 .form-group{

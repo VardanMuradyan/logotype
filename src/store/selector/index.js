@@ -1,6 +1,11 @@
 export const productListSelector = (state) => {
-    return state.ProductList
+    return state.productReducer.ProductList
 }
 export const filteredListSelector = (state) => {
-    return state.FilteredList
+    return state.productReducer.FilteredList
+}
+
+export const formListSelector = (state) => {
+    console.log(state,"s")
+    return state.registerReducer.form
 }

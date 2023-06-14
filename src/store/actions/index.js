@@ -1,4 +1,4 @@
-import {ADD_FILTERED_LIST, ADD_PRODUCT_ITEM} from "./actionTypes/action";
+import {ADD_FILTERED_LIST, ADD_PRODUCT_ITEM, ADD_USER_REGISTER} from "./actionTypes/action";
 
 const addProductItem = (value) => {
     return {
@@ -13,4 +13,11 @@ const addFilteredList = (value) => {
     }
 
 };
-export {addProductItem, addFilteredList};
+const register = (value) => {
+    return {
+        type: ADD_USER_REGISTER,
+        payload: value
+    }
+
+};
+export {addProductItem, addFilteredList,register};
