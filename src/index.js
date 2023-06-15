@@ -12,7 +12,7 @@ import ProductItem from "./pages/ProductItem";
 import {Provider} from "react-redux";
 import store from "./store";
 import Login from "./pages/Login";
-import Register from "./pages/Register";
+import Registration from "./pages/Registration";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,7 +22,7 @@ root.render(
             <BrowserRouter>
                 <Routes>
                     <Route path="/login" element={<Login/>}/>
-                    <Route path="/register" element={<Register/>}/>
+                    <Route path="/register" element={<Registration/>}/>
                     <Route path="/" element={<App/>}/>
                     <Route path="/demos" element={<Demos/>}/>
                     <Route path="/post" element={<Post/>}/>

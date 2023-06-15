@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {formListSelector} from "../store/selector";
 import {useNavigate} from "react-router";
 
-function Register() {
+function Registration() {
 
     const dispatch = useDispatch()
     const toLoginUser = useNavigate()
@@ -20,10 +20,6 @@ function Register() {
     useEffect(() => {
         if (formList) {
             localStorage.clear()
-
-            localStorage.setItem("firstName", formList.firstName)
-            localStorage.setItem("lastName", formList.lastName)
-            localStorage.setItem("date", formList.date)
             localStorage.setItem("email", formList.email)
             localStorage.setItem("pass", formList.password)
             toLoginUser('/login')
@@ -109,4 +105,4 @@ function Register() {
     );
 }
 
-export default Register;
+export default Registration;
