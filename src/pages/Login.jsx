@@ -4,7 +4,6 @@ import "../assets/scss/loginPage.scss"
 import {useDispatch, useSelector} from "react-redux";
 import {loginUser} from "../store/actions";
 import {useNavigate} from "react-router";
-import {loginReducer} from "../store/reducers/loginReducer";
 import {formLoginSelector} from "../store/selector";
 
 function Login() {
