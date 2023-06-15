@@ -1,4 +1,4 @@
-import {ADD_FILTERED_LIST, ADD_PRODUCT_ITEM, ADD_USER_REGISTER} from "./actionTypes/action";
+import {ADD_FILTERED_LIST, ADD_PRODUCT_ITEM, ADD_USER_LOGIN, ADD_USER_REGISTER} from "./actionTypes/action";
 
 const addProductItem = (value) => {
     return {
@@ -20,4 +20,13 @@ const register = (value) => {
     }
 
 };
-export {addProductItem, addFilteredList,register};
+
+const loginUser = (value) => {
+    console.log(value)
+    return {
+        type: ADD_USER_LOGIN,
+        payload: value
+    }
+}
+
+export {addProductItem, addFilteredList, register,loginUser};

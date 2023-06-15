@@ -1,8 +1,7 @@
 import {ADD_USER_LOGIN} from "../../actions/actionTypes/action";
 
 const initialState = {
-    email: "",
-    password: ""
+    loginList: ""
 }
 
 export const loginReducer = (state = initialState, action) => {
@@ -10,8 +9,7 @@ export const loginReducer = (state = initialState, action) => {
         case ADD_USER_LOGIN:
             return {
                 ...state,
-                email: action.payload,
-                password: action.payload,
+                loginList: action.payload
             }
         default:
             return state;

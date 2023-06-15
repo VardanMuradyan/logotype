@@ -34,7 +34,6 @@ function Register() {
 
 
     const handleChangeValue = (e) => {
-        console.log(e.target.value)
         const nextForm = {
             ...form,
             [e.target.name]: e.target.value,
