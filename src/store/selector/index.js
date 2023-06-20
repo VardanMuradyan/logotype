@@ -1,4 +1,3 @@
-import {loginReducer} from "../reducers/loginReducer";
 
 export const productListSelector = (state) => {
     return state.productReducer.ProductList

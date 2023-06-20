@@ -22,7 +22,7 @@ const register = (value) => {
 };
 
 const loginUser = (value) => {
-    console.log(value)
+      console.log(value)
     return {
         type: ADD_USER_LOGIN,
         payload: value

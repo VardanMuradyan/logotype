@@ -36,6 +36,7 @@ function Login() {
         }
     }, [loginList])
 
+
     return (
         <>
             <div className="page">
@@ -49,7 +50,7 @@ function Login() {
                                    type="email"
                                    className="form-control"
                                    name="email"/>
-                            <div className="help-block">Email is required</div>
+                            <div className="help_block">Email is required</div>
                         </div>
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
@@ -58,7 +59,7 @@ function Login() {
                                    type="password"
                                    className="form-control"
                                    name="password"/>
-                            <div className="help-block">Password is required</div>
+                            <div className="help_block">Password is required</div>
                         </div>
                         <div className="form-group">
                             <button onClick={() => dispatch(loginUser(login))} className="btn btn_primary">Login
